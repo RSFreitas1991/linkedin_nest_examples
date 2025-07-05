@@ -7,6 +7,7 @@ export class EnvironmentVariables {
   DATABASE_USER!: string;
 
   @IsString()
+  @IsNotEmpty()
   DATABASE_PASSWORD!: string;
 
   @Transform(({ value }) => {
