@@ -4,11 +4,11 @@ import { Transform } from 'class-transformer';
 export class EnvironmentVariables {
   @IsString()
   @IsNotEmpty()
-  DATABASE_USER!: string;
+  DATABASE_USER: string;
 
   @IsString()
   @IsNotEmpty()
-  DATABASE_PASSWORD!: string;
+  DATABASE_PASSWORD: string;
 
   @Transform(({ value }) => {
     if (value === 0) {
@@ -21,5 +21,5 @@ export class EnvironmentVariables {
     return value;
   })
   @IsNumber()
-  PORT!: number;
+  PORT: number;
 }
