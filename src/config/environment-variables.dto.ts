@@ -11,10 +11,11 @@ export class EnvironmentVariables {
 
   @Transform(({ value }) => {
     if (value === 0) {
+      // O enableImplicitConversion converte strings vazias para 0
       throw new Error('PORT cannot be empty or zero');
     }
     if (isNaN(value)) {
-      throw new Error('PORT must be a valid number');
+      throw new Error('PORT must be a valid number'); // Caso o valor não seja um número válido ele converte para NaN
     }
     return value;
   })
